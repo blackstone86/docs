@@ -168,8 +168,8 @@ $Sys.confirm({
 > - `height` 属性必须用数字
 > - 不需要像`popwin` 配置 `templateUrl`、`controller`、`params`这几个参数，因为确认弹窗用的是`confirmwin`组件
 > - 确认事件、取消事件回调都不会传任何参数，因为确认弹窗只需知道用户确认与否即可
-> - `content`支持`html`字符串
-> - 如何修改确认弹窗默认配置？ 在 `/script/system.js` 中修改 `confirmWinDefaultConf` 变量即可
+> - `content`支持`html`字符串
+> - 如何修改确认弹窗默认配置？ 在 `/script/system.js` 中修改 `confirmWinDefaultConf` 变量即可
 >   ``` js
 >    // 确认弹窗默认配置
 >    var confirmWinDefaultConf = {
@@ -205,6 +205,7 @@ $Sys.notify("下班!<br>去Happy~");
 ## 图片预览弹层
 
 **js参数**
+
 | 属性 | 说明 | 值类型 | 默认值 | 是否必填 |
 |-----|---|---|----|----|
 | `show` | 显示状态 | {Boolean} | N/A | 是 |
@@ -567,7 +568,7 @@ scope.editData = {
 
 > 注：
 > - `fix-plus-bar` 为 `true` 时，新增按钮会一直显示（原来因为数据为空默认显示的新增按钮不会再出现），对应的处理函数为 `on-create-first`
-> - `enable-drag` 为 `true` 时，树节点最右侧操作按钮用于移动节点，要移动节点到最后尾，请先将该节点移动到倒数第二个节点，然后再与最后一个节点对调位置。原因是数据节点保存需要找到被替换节点的id，直接放到最后时，替换节点不存在所以不允许拖动，会提示操作失败
+> - `enable-drag` 为 `true` 时，树节点最右侧操作按钮用于移动节点，要移动节点到最后尾，请先将该节点移动到倒数第二个节点，然后再与最后一个节点对调位置。原因是数据节点保存需要找到被替换节点的id，直接放到最后时，替换节点不存在所以不允许拖动，会提示操作失败
 > - `on-droped` 的处理函数示例
 > ``` js
 > $scope.ondroped = function(source_node, dest_node, cb){
@@ -911,7 +912,7 @@ scope.multisGridConf = {
 ```
 
 > 注：
-> - `config.component.conf` 为angular-ui-grid的 `ui-grid` 属性赋值的，配置方法跟表格配置完全一样，默认配置如下
+> - `config.component.conf` 为angular-ui-grid的 `ui-grid` 属性赋值的，配置方法跟表格配置完全一样，默认配置如下
 > ``` js
 > {
 >    columnDefs: [],
@@ -929,7 +930,7 @@ scope.multisGridConf = {
 >    useExternalPagination: true
 >}
 > ```
-> - `config.component.conf.columnDefs` 设置表格的列，注意留一个列是不配置宽度的，如下所示，目的是避免表格出现水平滚动条，由于表格设置了勾选列，当所有字段的宽度总和为100%时，内部宽度比父层容器宽度多出勾选列宽度，故出现水平滚动条
+> - `config.component.conf.columnDefs` 设置表格的列，注意留一个列是不配置宽度的，如下所示，目的是避免表格出现水平滚动条，由于表格设置了勾选列，当所有字段的宽度总和为100%时，内部宽度比父层容器宽度多出勾选列宽度，故出现水平滚动条
 > ``` js
 > columnDefs: [
 >    {
