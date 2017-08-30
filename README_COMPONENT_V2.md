@@ -10,17 +10,17 @@
 |-----|---|---|----|----|
 | `width` | 弹窗宽度 | {Number\|String} eg: 600/"600"/"90%"，数字时单位为"px" | "80%" | 否 |
 | `height` | 弹窗高度 | {Number} 单位为"px" | 460 | 否 |
-| `buttons` | 按钮类型 | {Array-String} eg: ["ok", "cancel"]，ok: 确定按钮 cancel: 取消按钮 | ["ok", "cancel"] | 否 |
+| `buttons` | 按钮类型 | {Array-String} eg: ["ok", "cancel"]，ok: 确定按钮 cancel: 取消按钮 | ["ok", "cancel"] | 否 |
 | `buttonsTxt` | 按钮文本 | {Object} | {ok: "确定", cancel: "取消"} | 否 |
 | `templateUrl` | 弹窗模板 | {String} | N/A | 是 | 
 | `controller` | 弹窗控制器 | {String} | N/A | 是 |
-| `title` | 弹窗标题 | {String} | "" | 是，必须设置具体标题 |
+| `title` | 弹窗标题 | {String} | "" | 是，必须设置具体标题 |
 | `params` | 弹窗参数 | {Mix} | {} | 否 |
-| `ok` | 弹窗确定事件回调处理 | {Function} | function(result){} result: 弹窗控制器调用\$scope.\$close(result)传来的参数 | 否 |
-| `cancel` | 弹窗取消事件回调处理 | {Function} | function(reason){} reason: 弹窗控制器调用\$scope.\$dismiss(reason)传来的参数 | 否 |
-| `opened` | 弹窗打开回调处理 | {Function} | function(){} | 否 |
-| `closed` | 弹窗关闭回调处理 | {Function} | function(){} | 否 |
-| `rendered` | 弹窗渲染完成回调处理 | {Function} | function(){} | 否 |
+| `ok` | 弹窗确定事件回调处理 | {Function} | function(result){} result: 弹窗控制器调用\$scope.\$close(result)传来的参数 | 否 |
+| `cancel` | 弹窗取消事件回调处理 | {Function} | function(reason){} reason: 弹窗控制器调用\$scope.\$dismiss(reason)传来的参数 | 否 |
+| `opened` | 弹窗打开回调处理 | {Function} | function(){} | 否 |
+| `closed` | 弹窗关闭回调处理 | {Function} | function(){} | 否 |
+| `rendered` | 弹窗渲染完成回调处理 | {Function} | function(){} | 否 |
 | `hidefooter` | 是否隐藏底部按钮 | {Boolean} | false | 否 |  
 
 **html**
@@ -99,7 +99,7 @@ JT_CONTEXT.controller('popwin_ctrl', ["$scope", "$params", function (scope, para
 > - 业务需要自定义按钮时，设置 `hidefooter` 为 `true`，按钮在 `templateUrl` 指定的模板中添加，
     当 `hidefooter` 为 `false` (默认值)，提供确定、取消两种按钮，在 `buttons` 中配置需要显示的按钮，弹窗确定事件通过 `$scope.$on("$POPWIN_CONFIRM", function(){...})`监听，右上角关闭或取消按钮事件通过 `$scope.$on("$POPWIN_CANCEL", function(){...})`监听，如果取消按钮是自定义的将不能监听，要自行处理，弹窗实例的 `close` 方法为 `$scope.$close`，`dismiss` 方法为 `$scope.$dismiss`
 > - 弹窗控制器接收参数，要引入 `$params` ，该参数为父容器控制器中配置的`params`配置项
-> - 如何修改弹窗默认配置？ 在 `/script/system.js` 中修改 `popWinDefaultConf` 变量即可
+> - 如何修改弹窗默认配置？ 在 `/script/system.js` 中修改 `popWinDefaultConf` 变量即可
 >   ``` js
 >    // 弹窗默认配置
 >    var popWinDefaultConf = {
@@ -131,12 +131,12 @@ JT_CONTEXT.controller('popwin_ctrl', ["$scope", "$params", function (scope, para
 |-----|---|---|----|----|
 | `width` | 弹窗宽度 | {Number\|String} eg: 600/"600"/"90%"，数字时单位为"px" | "80%" | 否 |
 | `height` | 弹窗高度 | {Number} 单位为"px" | 460 | 否 |
-| `buttons` | 按钮类型 | {Array-String} eg: ["ok", "cancel"]，ok: 确定按钮 cancel: 取消按钮 | ["ok", "cancel"] | 否 |
+| `buttons` | 按钮类型 | {Array-String} eg: ["ok", "cancel"]，ok: 确定按钮 cancel: 取消按钮 | ["ok", "cancel"] | 否 |
 | `buttonsTxt` | 按钮文本 | {Object} | {ok: "确定", cancel: "取消"} | 否 |
-| `title` | 弹窗标题 | {String} | "" | 是，必须设置具体标题 |
-| `content` | 弹窗内容 | {String} | "" | 是，必须设置具体内容 |
-| `ok` | 弹窗确定事件回调处理 | {Function} | function(result){} result: 弹窗控制器调用\$scope.\$close(result)传来的参数 | 否 |
-| `cancel` | 弹窗取消事件回调处理 | {Function} | function(reason){} reason: 弹窗控制器调用\$scope.\$dismiss(reason)传来的参数 | 否 |
+| `title` | 弹窗标题 | {String} | "" | 是，必须设置具体标题 |
+| `content` | 弹窗内容 | {String} | "" | 是，必须设置具体内容 |
+| `ok` | 弹窗确定事件回调处理 | {Function} | function(result){} result: 弹窗控制器调用\$scope.\$close(result)传来的参数 | 否 |
+| `cancel` | 弹窗取消事件回调处理 | {Function} | function(reason){} reason: 弹窗控制器调用\$scope.\$dismiss(reason)传来的参数 | 否 |
 
 **html**
 ``` html
