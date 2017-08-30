@@ -1,6 +1,4 @@
-# 组件规范 v2.0
-
-> 示例页：[DEMO](http://localhost:8080/demos.html)
+﻿# 组件规范 v2.0
 
 # 弹窗
 
