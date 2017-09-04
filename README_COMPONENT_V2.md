@@ -1158,6 +1158,46 @@ scope.adsearchConf = {
 };
 ```
 
+## 模糊+高级查询
+
+**属性**
+
+| 属性 | 描述 | 是否必须 | 值|
+|---- |:-------------:|:----:| ----:| 
+| `fields` | 高级查询字段集 | 否 | {Array} 默认值 []|
+
+**事件**
+
+| 事件 | 描述 |
+|---- |:-------------:|
+| `$search` | 模糊查询事件 |
+| `$adsearch` | 高级查询事件 |
+
+**html**
+``` html
+<!--模糊查询-->
+<ngsinglesearch></ngsinglesearch>
+<!--模糊查询+高级查询-->
+<ngsinglesearch fields="fields"></ngsinglesearch>
+```
+
+**js**
+``` js
+scope.fields = require("mock-adsearch");
+scope.conditions = {};
+scope.$on("$search", function(event, data){
+    // 模糊查询条件
+    scope.conditions.fuzzyCondition = data;
+});
+scope.$on("$adsearch", function(event, data){
+    // 高级查询条件
+    scope.conditions.adsearchCondition = data;
+});
+```
+
+> 注：
+> - `fields`属性值为数组且长度大于0，才显示`高级查询`按钮
+
 ## 容器
 
 **属性**
