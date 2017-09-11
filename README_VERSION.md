@@ -1,4 +1,6 @@
-# GIT配置使用
+# 版本库使用
+
+## GIT配置使用
 
 1. 配置个人信息
 
@@ -101,3 +103,75 @@
     - `reset` 和 `revert` 区别
         - `reset` 删除撤销的提交记录
         - `revert` 保留撤销的提交记录，再追加一个新的提交记录
+
+## SVN配置使用
+
+1. 更新svn程序
+
+    ``` shell
+        brew install svn
+    ```
+
+1. 注册命令
+
+    - 打开`.bash_profile`
+
+    ``` shell
+        cd ~/.bash_profile
+    ```
+
+    - 修改
+    
+    ``` shell
+        export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    ```
+
+1. 常用命令
+
+    - 查看svn仓库基本信息
+
+    ``` shell
+        svn info
+    ```
+
+    - 添加到版本库
+
+    ``` shell
+        svn add ./.svnignore
+    ```
+
+    - 提交到服务器
+
+    ``` shell
+        svn ci -m "init project"
+    ```
+
+    - 更新仓库代码
+
+    ``` shell
+        svn up
+    ```
+
+    - 对比文件变更情况
+
+    ``` shell
+        svn diff ./.svnignore
+    ```
+
+1. 设置版本忽略文件
+
+    - 忽略文件夹
+
+    ``` shell
+        svn delete target --keep-local
+        svn ci -m "ignore target dir"
+        svn st
+    ```
+
+    - 忽略文件
+
+    ``` shell
+        svn ps svn:ignore a.svg .
+        svn ci -m "ignore a.svg file"
+        svn st
+    ```
