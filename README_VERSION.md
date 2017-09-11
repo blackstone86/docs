@@ -117,10 +117,11 @@
     - 打开`.bash_profile`
 
     ``` shell
-        cd ~/.bash_profile
+        cd ~
+        open .bash_profile
     ```
 
-    - 修改
+    - 新安装的svn覆盖系统自带版本，注册路径需要修改
     
     ``` shell
         export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -156,6 +157,18 @@
 
     ``` shell
         svn diff ./.svnignore
+    ```
+
+    - 撤销更改
+
+    ``` shell
+        svn revert ./.svnignore
+    ```
+
+    - 标注冲突解决
+
+    ``` shell
+        svn resolve ./.svnignore
     ```
 
 1. 设置版本忽略文件
