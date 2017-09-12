@@ -173,18 +173,34 @@
 
 1. 设置版本忽略文件
 
-    - 忽略文件夹
+    - 全局设置
 
-    ``` shell
-        svn delete target --keep-local
-        svn ci -m "ignore target dir"
-        svn st
-    ```
+        - 打开svn`config`文件
 
-    - 忽略文件
+        ```shell
+            cd ~/.subversion && open config
+        ```
 
-    ``` shell
-        svn ps svn:ignore a.svg .
-        svn ci -m "ignore a.svg file"
-        svn st
-    ```
+        - 修改`global-ignores`变量，需解除注释
+
+        ```shell
+            global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo __pycache__ *.rej *~ #*# .#* .*.swp .DS_Store [Tt]humbs.db node_modules
+        ```
+
+    - 局部设置
+
+        - 忽略文件夹
+
+        ``` shell
+            svn delete target --keep-local
+            svn ci -m "ignore target dir"
+            svn st
+        ```
+
+        - 忽略文件
+
+        ``` shell
+            svn ps svn:ignore a.svg .
+            svn ci -m "ignore a.svg file"
+            svn st
+        ```
