@@ -15,7 +15,8 @@
 ## 四、常见脚本异常收集
 请阅读 `README_CODE_REVIEW.md`
    
-
+## 五、主题样式修改
+请阅读 `README_THEME_STYLE.md`
 
 
 
